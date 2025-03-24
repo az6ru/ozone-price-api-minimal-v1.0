@@ -216,34 +216,38 @@ class OzonParser:
         """Extract price information from product data."""
         try:
             if not price_data:
-                return Price(original=0, final=0)
+                return Price(original=0, final=None, card_price=0)
 
             # Получаем цены из priceV2
             prices = price_data.get('price', [])
             if not prices:
-                return Price(original=0, final=0)
+                return Price(original=0, final=None, card_price=0)
 
             # Функция для очистки цены
             def clean_price(price_text: str) -> float:
                 return float(re.sub(r'[^\d.]', '', price_text.replace(',', '.')))
 
-            # Получаем финальную цену
-            final_price = clean_price(prices[0]['text']) if prices else 0
+            # Получаем цену по карте (бывшая финальная цена)
+            card_price = clean_price(prices[0]['text']) if prices else 0
 
             # Получаем оригинальную цену
-            original_price = clean_price(prices[1]['text']) if len(prices) > 1 else final_price
+            original_price = clean_price(prices[1]['text']) if len(prices) > 1 else card_price
 
             # Вычисляем скидку
-            discount = original_price - final_price if original_price > final_price else None
+            discount = original_price - card_price if original_price > card_price else None
+            # Вычисляем процент скидки
+            discount_percent = int(round((discount / original_price) * 100)) if discount is not None and original_price > 0 else None
 
             return Price(
                 original=original_price,
-                final=final_price,
-                discount=discount
+                final=None,
+                card_price=card_price,
+                discount=discount,
+                discount_percent=discount_percent
             )
         except Exception as e:
             print(f"Ошибка извлечения цен: {e}")
-            return Price(original=0, final=0)
+            return Price(original=0, final=None, card_price=0)
 
     def _extract_product_info(self, item: dict) -> Product:
         """Extract product information from widget."""
@@ -276,7 +280,9 @@ class OzonParser:
         price = Price(
             original=price_info.original,
             discount=price_info.discount,
-            final=price_info.final
+            final=price_info.final,
+            card_price=price_info.card_price,
+            discount_percent=price_info.discount_percent
         )
         
         return Product(
@@ -683,7 +689,7 @@ class OzonParser:
                 product_name = ' '.join(product_name.split())
 
             # Извлекаем цены
-            price = Price(original=0.0, final=0.0, discount=None, card_price=None)
+            price = Price(original=0.0, final=None, card_price=None)
             
             # Пробуем получить цены из price_widget
             if price_widget:

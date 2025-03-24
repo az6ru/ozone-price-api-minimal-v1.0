@@ -12,7 +12,7 @@ class Price(BaseModel):
     original: float = 0.0  # Оригинальная цена
     discount: Optional[float] = None  # Скидка
     discount_percent: Optional[int] = None  # Скидка в процентах
-    final: float = 0.0    # Текущая цена
+    final: Optional[float] = None    # Текущая цена
     card_price: Optional[float] = None  # Цена по карте Ozon
 
 class Product(BaseModel):

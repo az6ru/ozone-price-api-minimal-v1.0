@@ -50,4 +50,12 @@ htmlcov/
 .coverage.*
 .cache
 coverage.xml
-*.cover 
+*.cover
+
+# Additional ignores
+.venv/
+.cursor/
+__pycache__/
+.pytest_cache/
+*.pyc
+.DS_Store 

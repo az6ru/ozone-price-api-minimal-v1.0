@@ -5,10 +5,10 @@
   "category": "Кремы",
   "price": {
     "original": 8900.0,
-    "discount": 3749.0,
+    "discount": 3765.0,
     "discount_percent": 42,
-    "final": 5151.0,
-    "card_price": 4835.0
+    "final": 5135.0,
+    "card_price": 4821.0
   },
   "seller": {
     "id": "1179237",
@@ -51,6 +51,6 @@
   "reviews_count": 3,
   "quantity": 0,
   "sku_id": "1849590918",
-  "parsed_at": "2025-03-23 19:31:14.263773",
+  "parsed_at": "2025-03-24 12:57:45.782779",
   "url": "https://www.ozon.ru/product/1849590918/"
 }
