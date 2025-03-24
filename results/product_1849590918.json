@@ -1,0 +1,56 @@
+{
+  "id": "1849590918",
+  "name": "Био Матрица Гаряева КИК-3 Крем с маклюрой и кедровой живицей",
+  "brand": "Александр Леонов",
+  "category": "Кремы",
+  "price": {
+    "original": 8900.0,
+    "discount": 3749.0,
+    "discount_percent": 42,
+    "final": 5151.0,
+    "card_price": 4835.0
+  },
+  "seller": {
+    "id": "1179237",
+    "name": "магазин Александра Леонова",
+    "logo": "https://cdn1.ozonusercontent.com/s3/marketing-api/banners/M4/Rk/M4RkQpYOcQB2y0PyTU5qimJWKM0xBumN.jpg",
+    "link": "/seller/1179237/"
+  },
+  "characteristics": [
+    {
+      "name": "Тип",
+      "value": "Крем для ухода за кожей"
+    },
+    {
+      "name": "Аромат",
+      "value": "Маклюра"
+    },
+    {
+      "name": "Область использования",
+      "value": "Тело, , Шея, , Лицо, , Руки"
+    },
+    {
+      "name": "Пол",
+      "value": "Женский, , Мужской"
+    },
+    {
+      "name": "Объем, мл",
+      "value": "100"
+    }
+  ],
+  "description": "",
+  "images": [
+    "https://cdn1.ozone.ru/s3/multimedia-1-f/7343854647.jpg",
+    "https://cdn1.ozone.ru/s3/multimedia-1-f/7343854647.jpg",
+    "https://cdn1.ozone.ru/s3/multimedia-1-t/7295018717.jpg",
+    "https://cdn1.ozone.ru/s3/multimedia-1-v/7295018719.jpg",
+    "https://cdn1.ozone.ru/s3/multimedia-1-z/7295018723.jpg",
+    "https://cdn1.ozone.ru/s3/multimedia-1-p/7295018713.jpg"
+  ],
+  "rating": 5.0,
+  "reviews_count": 3,
+  "quantity": 0,
+  "sku_id": "1849590918",
+  "parsed_at": "2025-03-23 19:31:14.263773",
+  "url": "https://www.ozon.ru/product/1849590918/"
+}

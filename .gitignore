@@ -21,24 +21,33 @@ wheels/
 *.egg
 
 # Virtual Environment
-.env
-.venv
-env/
 venv/
+env/
 ENV/
+.env
 
-# IDE
+# IDE specific files
 .idea/
 .vscode/
 *.swp
 *.swo
-
-# Project specific
-api.db
-api_responses/
-*.log
-tokem.txt
-
-# OS specific
 .DS_Store
-Thumbs.db 
+
+# Logs
+*.log
+logs/
+
+# Local development settings
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+coverage.xml
+*.cover 
